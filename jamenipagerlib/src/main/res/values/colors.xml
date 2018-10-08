@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text_selected_color">#2baaed</color>
+    <color name="text_normal_color">#161d1c</color>
+    <color name="bg_normal_color">@android:color/white</color>
+    <color name="bg_selected_color">#F6F7F9</color>
+
+</resources>
