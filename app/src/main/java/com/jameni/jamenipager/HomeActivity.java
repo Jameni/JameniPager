@@ -1,8 +1,6 @@
 package com.jameni.jamenipager;
 
 import android.graphics.Color;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 
 import com.jameni.jamenipagerlib.view.JameniPager;
@@ -17,7 +15,6 @@ public class HomeActivity extends AppCompatActivity {
 
     @ViewById
     JameniPager myPager;
-
     Fragment1 fragment1, fragment2;
 
     @AfterViews
@@ -25,7 +22,6 @@ public class HomeActivity extends AppCompatActivity {
 
         fragment1 = Fragment1_.builder().parmas("第一 个fragmentmen 页面").build();
         fragment2 = Fragment1_.builder().parmas("第二 个fragmentmen 页面").build();
-
 
         myPager.setFragmentManager(getSupportFragmentManager());
         myPager.addPage("page1",fragment1);
