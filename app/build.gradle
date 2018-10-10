@@ -25,10 +25,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation project(':jamenipagerlib')
-//    implementation 'com.github.Jameni:JameniPager:v1.0.0'
+//    implementation project(':jamenipagerlib')
+    implementation 'com.github.Jameni:JameniPager:v1.0.0'
 
     annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
     implementation "org.androidannotations:androidannotations-api:$AAVersion"
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    implementation 'com.android.support:recyclerview-v7:28.0.0-rc02'
+    implementation 'com.github.Jameni:JameniListLib:v1.0.0'
 
 }

@@ -34,8 +34,8 @@ import java.util.List;
 public class JameniPager extends LinearLayout {
 
     private Context context;
-    //    private NoScrollPager pager;
-    private ViewPager pager;
+        private NoScrollPager pager;
+//    private ViewPager pager;
     private View view;
     private MagicIndicator indicator;
     private NormalPagerAdapter adapter;
@@ -107,8 +107,8 @@ public class JameniPager extends LinearLayout {
             pager.setAdapter(adapter);
             pager.setOffscreenPageLimit(getPageSize());
             pager.setBackgroundColor(Color.WHITE);
-//            pager.setSmoothScrolEnable(isSmoothScrolEnable());
-//            pager.setScrollEnable(isScrollEnable());
+            pager.setSmoothScrolEnable(isSmoothScrolEnable());
+            pager.setScrollEnable(isScrollEnable());
         }
 
     }

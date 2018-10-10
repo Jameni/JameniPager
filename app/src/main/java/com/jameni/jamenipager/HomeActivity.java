@@ -16,16 +16,25 @@ public class HomeActivity extends AppCompatActivity {
     @ViewById
     JameniPager myPager;
     Fragment1 fragment1, fragment2;
-
+    Fragment2 fragment3, fragment4;//嵌套 scrollview
+    Fragment3 fragment5, fragment6;//嵌套 recycleview
     @AfterViews
     void initPage() {
 
         fragment1 = Fragment1_.builder().parmas("第一 个fragmentmen 页面").build();
         fragment2 = Fragment1_.builder().parmas("第二 个fragmentmen 页面").build();
 
+        fragment3 = Fragment2_.builder().parmas("第一 个fragmentmen 页面").build();
+        fragment4 = Fragment2_.builder().parmas("第二 个fragmentmen 页面").build();
+
+
+        fragment5 = Fragment3_.builder().parmas("第一 个fragmentmen 页面").build();
+        fragment6 = Fragment3_.builder().parmas("第二 个fragmentmen 页面").build();
+
+
         myPager.setFragmentManager(getSupportFragmentManager());
-        myPager.addPage("page1",fragment1);
-        myPager.addPage("page2",fragment2);
+        myPager.addPage("page1", fragment3);
+        myPager.addPage("page2", fragment4);
         myPager.setLine_color(R.color.colorPrimary);
         myPager.setText_normal_color(R.color.colorAccent);
         myPager.setText_selected_color(R.color.colorPrimaryDark);

@@ -27,3 +27,9 @@
         myPager.init();
 
     }
+
+
+    ******使用的时候注意事项*******
+
+    1.如果fragment中嵌套的 listview或者recycleview,
+    列表的item中如果有textview 的gravity属性含有  center、right这两个属性的时候，会影响pager的左右滑动焦点
