@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 
 import com.jameni.jamenipagerlib.R;
 import com.jameni.jamenipagerlib.adapter.NormalPagerAdapter;
+import com.jameni.jamenipagerlib.i.PageChangeListener;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
@@ -34,8 +35,8 @@ import java.util.List;
 public class JameniPager extends LinearLayout {
 
     private Context context;
-        private NoScrollPager pager;
-//    private ViewPager pager;
+    private NoScrollPager pager;
+    //    private ViewPager pager;
     private View view;
     private MagicIndicator indicator;
     private NormalPagerAdapter adapter;
@@ -62,6 +63,7 @@ public class JameniPager extends LinearLayout {
     private boolean scrollEnable = true;//是否可以手势滑动viewpager
     private boolean smoothScrolEnable = true;//是否有滑动动画
 
+    private PageChangeListener listener;
 
     private FragmentManager fragmentManager;
     private ArrayList<Fragment> pageList = new ArrayList<>();
@@ -163,6 +165,11 @@ public class JameniPager extends LinearLayout {
                         pager.setCurrentItem(i);
                     }
                 });
+
+                if (listener != null) {
+                    listener.pageSelected(i);
+                }
+
 
                 return titleView;
             }
@@ -394,4 +401,16 @@ public class JameniPager extends LinearLayout {
 
     }
 
+    public NoScrollPager getPager() {
+        return pager;
+    }
+
+    public void showPage(int position) {
+        pager.setCurrentItem(position);
+        setCurrentPosition(position);
+    }
+
+    public void setListener(PageChangeListener listener) {
+        this.listener = listener;
+    }
 }
