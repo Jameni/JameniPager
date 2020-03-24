@@ -1,7 +1,9 @@
 package com.jameni.jamenipager;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,7 +12,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HomeActivity_.intent(this).start();
+//        HomeActivity_.intent(this).start();
+
+        startActivity(new Intent(this, HomeActivity.class));
         finish();
     }
 }

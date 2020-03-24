@@ -3,14 +3,14 @@ package com.jameni.jamenipagerlib.view;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.jameni.jamenipagerlib.R;
 import com.jameni.jamenipagerlib.adapter.NormalPagerAdapter;
@@ -36,7 +36,6 @@ public class JameniPager extends LinearLayout {
 
     private Context context;
     private NoScrollPager pager;
-    //    private ViewPager pager;
     private View view;
     private MagicIndicator indicator;
     private NormalPagerAdapter adapter;
