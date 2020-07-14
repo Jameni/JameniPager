@@ -24,7 +24,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation project(':jamenipagerlib')
-//    implementation 'com.github.Jameni:JameniPager:v1.0.0'
+//    implementation 'com.github.Jameni:JameniPager:v1.1.0'
 //    annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
 //    implementation "org.androidannotations:androidannotations-api:$AAVersion"
 //    implementation 'com.github.Jameni:JameniListLib:v1.0.0'

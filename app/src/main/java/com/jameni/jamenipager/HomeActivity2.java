@@ -6,17 +6,17 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.jameni.jamenipagerlib.view.JameniPager;
+import com.jameni.jamenipagerlib.view.JameniPager2;
 
 
-public class HomeActivity extends AppCompatActivity {
-    JameniPager myPager;
+public class HomeActivity2 extends AppCompatActivity {
+    JameniPager2 myPager;
     Fragment1 fragment1, fragment2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page_home);
+        setContentView(R.layout.page_home2);
         myPager = findViewById(R.id.myPager);
         initPage();
     }
@@ -27,9 +27,12 @@ public class HomeActivity extends AppCompatActivity {
         fragment1 = new Fragment1();
         fragment2 = new Fragment1();
 
-        myPager.setFragmentManager(getSupportFragmentManager());
+//        myPager.setFragmentManager(getSupportFragmentManager());
+        myPager.setFragmentActivity(this);
         myPager.addPage("page1", fragment1);
         myPager.addPage("page2", fragment2);
+        myPager.addPage("page3", new Fragment1());
+        myPager.addPage("page4", new Fragment1());
         myPager.setLine_color(R.color.colorPrimary);
         myPager.setText_normal_color(R.color.colorAccent);
         myPager.setText_selected_color(R.color.colorPrimaryDark);
@@ -39,8 +42,11 @@ public class HomeActivity extends AppCompatActivity {
         myPager.setDivider_padding(20);
         myPager.setDivider_color_rgb(Color.rgb(100, 200, 100));
         myPager.setIndicatorVisiable(true);
-        myPager.setSmoothScrolEnable(true);
         myPager.setScrollEnable(true);
+//        myPager.setPagerVertical();
+        myPager.setPagerHorizontal();
+        myPager.setPageIndexVisiable(true);
+        myPager.setTabAverage(true);//每个tab是否撑满
         myPager.init();
 
     }
