@@ -27,12 +27,33 @@ public class HomeActivity2 extends AppCompatActivity {
         fragment1 = new Fragment1();
         fragment2 = new Fragment1();
 
-//        myPager.setFragmentManager(getSupportFragmentManager());
+        //添加过的fragment 不能重复添加，不然会闪退
         myPager.setFragmentActivity(this);
         myPager.addPage("page1", fragment1);
         myPager.addPage("page2", fragment2);
         myPager.addPage("page3", new Fragment1());
         myPager.addPage("page4", new Fragment1());
+        myPager.addPage("page5", new Fragment1());
+        myPager.addPage("page6", new Fragment1());
+        myPager.addPage("page7", new Fragment1());
+        myPager.addPage("page8", new Fragment1());
+//        myPager.addPage("page1", fragment1);
+//        myPager.addPage("page2", fragment2);
+        myPager.addPage("page3", new Fragment1());
+        myPager.addPage("page4", new Fragment1());
+        myPager.addPage("page5", new Fragment1());
+        myPager.addPage("page6", new Fragment1());
+        myPager.addPage("page7", new Fragment1());
+        myPager.addPage("page8", new Fragment1());
+//        myPager.addPage("page1", fragment1);
+//        myPager.addPage("page2", fragment2);
+        myPager.addPage("page3", new Fragment1());
+        myPager.addPage("page4", new Fragment1());
+        myPager.addPage("page5", new Fragment1());
+        myPager.addPage("page6", new Fragment1());
+        myPager.addPage("page7", new Fragment1());
+        myPager.addPage("page8", new Fragment1());
+
         myPager.setLine_color(R.color.colorPrimary);
         myPager.setText_normal_color(R.color.colorAccent);
         myPager.setText_selected_color(R.color.colorPrimaryDark);
@@ -47,6 +68,7 @@ public class HomeActivity2 extends AppCompatActivity {
         myPager.setPagerHorizontal();
         myPager.setPageIndexVisiable(true);
         myPager.setTabAverage(true);//每个tab是否撑满
+        myPager.setTabAverage(false);//每个tab是否撑满
         myPager.init();
 
     }
