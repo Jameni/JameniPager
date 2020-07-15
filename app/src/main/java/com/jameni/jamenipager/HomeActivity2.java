@@ -66,7 +66,7 @@ public class HomeActivity2 extends AppCompatActivity {
         myPager.setScrollEnable(true);
 //        myPager.setPagerVertical();
         myPager.setPagerHorizontal();
-        myPager.setPageIndexVisiable(true);
+        myPager.setPageIndexVisiable(false);
         myPager.setTabAverage(true);//每个tab是否撑满
         myPager.setTabAverage(false);//每个tab是否撑满
         myPager.init();

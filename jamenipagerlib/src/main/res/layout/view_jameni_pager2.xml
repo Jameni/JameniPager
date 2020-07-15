@@ -5,14 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
         app:tabGravity="center"
         app:tabIndicatorGravity="bottom"
-        android:background="@android:color/white"
         app:tabMaxWidth="0dp"
         app:tabMode="scrollable" />
 
@@ -33,9 +32,7 @@
             android:layout_marginBottom="20dp"
             android:gravity="center"
             android:text="0 / 0"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/black" />
 
     </RelativeLayout>
-
-
 </LinearLayout>

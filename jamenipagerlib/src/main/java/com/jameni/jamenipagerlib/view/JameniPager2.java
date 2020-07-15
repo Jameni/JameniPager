@@ -10,13 +10,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-import com.jameni.allutillib.common.PrintUtil;
 import com.jameni.jamenipagerlib.R;
 import com.jameni.jamenipagerlib.adapter.NormalPagerAdapter2;
 import com.jameni.jamenipagerlib.i.PageChangeListener;
@@ -98,9 +98,7 @@ public class JameniPager2 extends LinearLayout {
         tabs = view.findViewById(R.id.tabs);
         tvPageIndex = view.findViewById(R.id.tvPageIndex);
         addView(view);
-
     }
-
 
     public void setTabModeScroll() {
         tabMode = TabLayout.MODE_SCROLLABLE;
@@ -151,11 +149,11 @@ public class JameniPager2 extends LinearLayout {
                 public void onPageSelected(int position) {
                     super.onPageSelected(position);
 
-                    PrintUtil.printMsg("当前位置：" + position);
-                    setIndexText();
+//                    PrintUtil.printMsg("当前位置：" + position);
 
+                    setCurrentPosition(position);
+                    setIndexText();
                     if (listener != null) {
-                        setCurrentPosition(position);
                         listener.pageSelected(position);
                     }
 
@@ -218,7 +216,10 @@ public class JameniPager2 extends LinearLayout {
                 setTabGravityFill();
                 setTabModeFixed();
             }
-            tabs.setSelectedTabIndicatorColor(Color.YELLOW);
+
+            //设置下划线颜色
+            tabs.setSelectedTabIndicatorColor(ContextCompat.getColor(context, line_color));
+            tabs.setTabTextColors(ContextCompat.getColor(context, text_normal_color), ContextCompat.getColor(context, text_selected_color));
         }
 
 
@@ -305,11 +306,10 @@ public class JameniPager2 extends LinearLayout {
     }
 
     public void addPage(String title, Fragment fragment) {
-        PrintUtil.printMsg("add page  " + title);
+//        PrintUtil.printMsg("add page  " + title);
         addTab(title);
         addPage(fragment);
     }
-
 
     public void setPageList(ArrayList<Fragment> pageList) {
         this.pageList = pageList;
@@ -427,8 +427,8 @@ public class JameniPager2 extends LinearLayout {
     public void showPage(int position) {
         pager.setCurrentItem(position);
         setCurrentPosition(position);
+        setIndexText();
     }
-
 
     public void setPagerVertical() {
         this.pagerOrientation = ViewPager2.ORIENTATION_VERTICAL;
@@ -450,5 +450,9 @@ public class JameniPager2 extends LinearLayout {
 
     public void setTabAverage(boolean tabAverage) {
         isTabAverage = tabAverage;
+    }
+
+    public TextView getTvPageIndex() {
+        return tvPageIndex;
     }
 }
